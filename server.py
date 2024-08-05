@@ -83,7 +83,13 @@ def show_qrcode():
                 # Захват экрана
                 screenshot = np.array(pyautogui.screenshot())
                 screenshot = cv2.cvtColor(screenshot, cv2.COLOR_RGB2BGR)
-                resized_screenshot = cv2.resize(screenshot, (640, 480))
+                resized_screenshot = cv2.resize(screenshot, (1024, 600))
+
+                # Получаем координаты мыши
+                mouse_x, mouse_y = pyautogui.position()
+
+                # Рисуем круг в позиции мыши
+                cv2.circle(resized_screenshot, (mouse_x, mouse_y), 10, (0, 255, 0), 2)
                 
                 # Кодирование изображения в JPEG
                 retval, buffer = cv2.imencode('.jpg', resized_screenshot, [int(cv2.IMWRITE_JPEG_QUALITY), 90])

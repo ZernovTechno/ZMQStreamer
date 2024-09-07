@@ -3,7 +3,7 @@ import numpy as np
 import cv2
 import base64
 import pyautogui
-import socket
+import socket  # Импортируем socket
 import segno
 import tkinter as tk
 from PIL import Image, ImageTk
@@ -83,14 +83,15 @@ def show_qrcode():
                 # Захват экрана
                 screenshot = np.array(pyautogui.screenshot())
                 screenshot = cv2.cvtColor(screenshot, cv2.COLOR_RGB2BGR)
-                resized_screenshot = cv2.resize(screenshot, (1024, 600))
 
                 # Получаем координаты мыши
                 mouse_x, mouse_y = pyautogui.position()
 
-                # Рисуем круг в позиции мыши
-                cv2.circle(resized_screenshot, (mouse_x, mouse_y), 10, (0, 255, 0), 2)
-                
+                # Добавляем красный круг в позицию мышки
+                cv2.circle(screenshot, (mouse_x, mouse_y), 15, (0, 0, 255), -1)
+
+                resized_screenshot = cv2.resize(screenshot, (640, 480))
+
                 # Кодирование изображения в JPEG
                 retval, buffer = cv2.imencode('.jpg', resized_screenshot, [int(cv2.IMWRITE_JPEG_QUALITY), 90])
                 if retval:

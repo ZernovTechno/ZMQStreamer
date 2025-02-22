@@ -1,3 +1,5 @@
+# УСТАРЕЛО. СМ. https://github.com/ZernovTechno/RealityConnect
+
 [ENGLISH README](./README.md)
 # ZMQStreamer
 ## Создал [Zernov](https://www.youtube.com/@zernovtech)

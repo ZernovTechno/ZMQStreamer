@@ -1,3 +1,5 @@
+# DEPRECATED. SEE https://github.com/ZernovTechno/RealityConnect
+
 [README НА РУССКОМ](./READMERUS.md)
 # ZMQStreamer
 ## Managed by [Zernov](https://www.youtube.com/@zernovtech)
